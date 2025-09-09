@@ -1,45 +1,103 @@
-/* --- REACH ME --- */
-.reach-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  align-items: center;
-  justify-content: center;
-  padding: 28px 0;
+/* styles.css - shared across pages */
+
+/* Colors */
+:root{
+  --purple: #5e2b8a;
+  --gold: #d4af37;
+  --white: #ffffff;
+  --bg: #f7f6fb;
+  --text: #222;
+  --muted: #6b6b6b;
+  --nav-height: 68px;
+  --radius: 12px;
 }
 
-.social-card {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 20px;
-  border-radius: 14px;
-  background: linear-gradient(180deg, #fff, #faf7ff);
-  box-shadow: 0 8px 24px rgba(94,43,138,0.06);
-  font-weight: 600;
-  text-decoration: none;
-  color: var(--text);
-  transition: transform .25s ease, box-shadow .25s ease;
+/* Reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:var(--text);
+  background:linear-gradient(180deg, var(--bg), #fff);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
 }
 
-.social-card i {
-  font-size: 26px;
-}
+/* container */
+.container{max-width:1100px;margin:0 auto;padding:24px}
 
-/* Hover effect */
-.social-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 28px rgba(94,43,138,0.12);
+/* top navbar (used on pages except interface) */
+.navbar{
+  height:var(--nav-height);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:0 20px;
+  background:linear-gradient(90deg, rgba(94,43,138,0.95), rgba(212,175,55,0.95));
+  color:var(--white);
+  position:sticky;
+  top:0;
+  z-index:100;
+  border-bottom-left-radius:0;
+  border-bottom-right-radius:0;
 }
+.navbar .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:18px}
+.navbar .brand img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.25)}
+.navbar .nav-links{display:flex;gap:8px;align-items:center}
+.navbar .nav-links a{
+  padding:10px 14px;border-radius:10px;color:var(--white);text-decoration:none;font-weight:600;
+  background:transparent;border:2px solid rgba(255,255,255,0.06)
+}
+.navbar .nav-links a.active{background:rgba(255,255,255,0.12);box-shadow:0 6px 16px rgba(0,0,0,0.08)}
 
-/* Brand colors */
-.social-card[href*="linkedin"] i { color: #0A66C2; }
-.social-card[href*="x.com"] i,
-.social-card[href*="twitter"] i { color: #1DA1F2; }
-.social-card[href*="instagram"] i { color: #E1306C; }
-.social-card[href*="mailto"] i { color: #EA4335; }
-.social-card[href*="facebook"] i { color: #1877F2; }
-.social-card[href*="tiktok"] i { color: #000000; }
+/* interface / landing */
+.landing{
+  min-height:calc(100vh - var(--nav-height));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:48px;
+}
+.landing .card{
+  background:linear-gradient(180deg, #fff, #faf8ff);
+  padding:36px;border-radius:18px;box-shadow:0 12px 40px rgba(94,43,138,0.12);
+  width:100%; max-width:860px;
+}
+.greetings{font-size:20px;color:var(--muted);margin-bottom:8px}
+.landing h1{font-size:34px;color:var(--purple);margin-bottom:6px}
+.landing .sub{font-size:18px;color:#444;margin-bottom:20px}
+
+/* big rounded rect button */
+.btn-cta{
+  display:inline-block;padding:14px 24px;border-radius:28px;background:var(--purple);color:var(--white);text-decoration:none;
+  font-weight:700;box-shadow:0 8px 24px rgba(94,43,138,0.18);
+  border:3px solid rgba(212,175,55,0.08);
+}
+.profile-circle{margin-top:22px;width:120px;height:120px;border-radius:50%;overflow:hidden;border:6px solid rgba(94,43,138,0.12);display:inline-block}
+.profile-circle img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* homepage */
+.home-hero{
+  display:flex;gap:28px;align-items:center;padding:40px 0;
+}
+.home-hero .photo{flex:0 0 48%;display:flex;justify-content:center}
+.home-hero .photo img{width:95%;border-radius:14px;object-fit:cover;box-shadow:0 18px 40px rgba(94,43,138,0.12)}
+.home-hero .intro{flex:1;padding:18px}
+.intro h2{font-size:28px;color:var(--purple);margin-bottom:8px}
+.intro h1{font-size:36px;margin-bottom:8px}
+.roles{font-size:16px;color:var(--muted);height:28px;display:flex;align-items:center}
+
+/* typing caret */
+.typing{display:inline-block;border-right:3px solid var(--purple);padding-right:6px;margin-left:6px;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{border-color:transparent}}
+
+/* about page split */
+.about-split{display:flex;gap:18px;padding:32px 0}
+.about-split .half{flex:1;background:#fff;border-radius:12px;padding:20px;box-shadow:0 8px 24px rgba(94,43,138,0.06);height:70vh;overflow:auto}
+.about-split h3{color:var(--purple);margin-bottom:12px}
 
 /* --- MEMORIES --- */
 .gallery-grid {
@@ -114,4 +172,63 @@
   margin: 12px;
   font-size: 15px;
   color: #444;
+}
+
+
+/* --- REACH ME --- */
+.reach-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 0;
+}
+
+.social-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #fff, #faf7ff);
+  box-shadow: 0 8px 24px rgba(94,43,138,0.06);
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.social-card i {
+  font-size: 26px;
+}
+
+/* Hover effect */
+.social-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(94,43,138,0.12);
+}
+
+/* Brand colors */
+.social-card[href*="linkedin"] i { color: #0A66C2; }
+.social-card[href*="x.com"] i,
+.social-card[href*="twitter"] i { color: #1DA1F2; }
+.social-card[href*="instagram"] i { color: #E1306C; }
+.social-card[href*="mailto"] i { color: #EA4335; }
+.social-card[href*="facebook"] i { color: #1877F2; }
+.social-card[href*="tiktok"] i { color: #000000; }
+
+
+/* ART page */
+.art-links{display:flex;flex-direction:column;gap:12px;padding:24px 0}
+.app-btn{display:inline-block;padding:12px 18px;border-radius:12px;background:var(--purple);color:var(--white);text-decoration:none;font-weight:700;max-width:380px;}
+
+/* footer */
+.footer{margin-top:28px;padding:20px;text-align:center;color:var(--muted);font-size:14px}
+
+/* responsive */
+@media (max-width:900px){
+  .home-hero{flex-direction:column}
+  .about-split{flex-direction:column}
+  .landing .card{padding:24px}
 }
