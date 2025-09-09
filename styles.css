@@ -113,9 +113,29 @@ body{
 .modal .modal-caption{margin-top:10px;font-size:15px;color:#333}
 
 /* REACH ME */
-.reach-grid{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:center;padding:28px 0}
-.social-card{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:12px;background:linear-gradient(180deg,#fff,#faf7ff);box-shadow:0 8px 24px rgba(94,43,138,0.06)}
-.social-card i{font-size:22px;color:var(--purple)}
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.social-links a {
+  font-size: 40px;
+  color: purple;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  color: gold;
+  transform: scale(1.2);
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  color: white;
+}
 
 /* ART page */
 .art-links{display:flex;flex-direction:column;gap:12px;padding:24px 0}
