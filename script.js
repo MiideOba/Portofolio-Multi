@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 
   // typing animation on homepage (index.html)
-  const roles = ["Inspiring Leader", "B.Agric Graduate", "Public Speaker", "Farming Aficionado", "Writer"];
+  const roles = ["Operations and Administrative Professional", "Agriculturist", "Project Coordinator", "Logistics & Procurement","Social Media Manager", "Researcher", "Writer and Public Speaker", "Sustainability"];
   const roleEl = document.getElementById('role-text');
   if(roleEl){
     let idx = 0, char = 0, forward = true;
